@@ -1,0 +1,79 @@
+{
+  "rules": {
+    "users": {
+      ".indexOn": ["email", "createdAt", "plan"],
+      ".read": "auth != null && root.child('systemUsers').child(auth.uid).child('role').val() === 'admin'",
+      "$uid": {
+        ".read": "auth != null && auth.uid == $uid",
+        ".write": "auth != null && auth.uid == $uid"
+      }
+    },
+    "systemUsers": {
+      ".read": "auth != null && root.child('systemUsers').child(auth.uid).child('role').val() === 'admin'",
+      ".write": "auth != null && root.child('systemUsers').child(auth.uid).child('role').val() === 'admin'",
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid"
+      }
+    },
+    "cliAuth": {
+      "$deviceCode": {
+        ".read": "true",
+        ".write": "auth != null || (!data.exists() && !newData.child('userId').exists())",
+        ".validate": "newData.hasChildren(['status', 'createdAt', 'expiresAt'])"
+      }
+    },
+    "chats": {
+      ".indexOn": ["userId", "lastMessageAt"],
+      ".read": "auth != null && root.child('systemUsers').child(auth.uid).child('role').val() === 'admin'",
+      "$chatId": {
+        ".read": "auth != null && auth.uid == data.child('userId').val() && root.child('users').child(auth.uid).exists()",
+        ".write": "auth != null && root.child('users').child(auth.uid).exists() && ((!data.exists() && newData.child('userId').val() == auth.uid) || (data.exists() && data.child('userId').val() == auth.uid))",
+        ".validate": "newData.hasChildren(['userId', 'title', 'createdAt', 'updatedAt', 'lastMessageAt', 'messageCount', 'status'])"
+      }
+    },
+    "messages": {
+      ".indexOn": ["userId", "chatId", "createdAt"],
+      ".read": "auth != null && root.child('systemUsers').child(auth.uid).child('role').val() === 'admin'",
+      "$messageId": {
+        ".read": "auth != null && root.child('users').child(auth.uid).exists() && auth.uid == data.child('userId').val()",
+        ".write": "auth != null && root.child('users').child(auth.uid).exists() && ((!data.exists() && newData.child('userId').val() == auth.uid) || (data.exists() && data.child('userId').val() == auth.uid))",
+        ".validate": "newData.hasChildren(['userId', 'role', 'content', 'createdAt', 'status']) && (!newData.hasChild('chatId') || newData.child('chatId').isString())",
+        "toolRequests": {
+          "$toolRequestId": {
+            ".read": "auth != null && root.child('users').child(auth.uid).exists()",
+            ".write": "auth != null && root.child('users').child(auth.uid).exists()"
+          }
+        }
+      }
+    },
+    "sessions": {
+      "$sessionId": {
+        ".read": "auth != null",
+        ".write": "auth != null"
+      }
+    },
+    "usage": {
+      ".read": "auth != null && root.child('systemUsers').child(auth.uid).child('role').val() === 'admin'",
+      "$userId": {
+        ".read": "auth != null && auth.uid == $userId && root.child('users').child(auth.uid).exists()",
+        ".write": "auth != null && auth.uid == $userId && root.child('users').child(auth.uid).exists()",
+        "$month": {
+          ".read": "auth != null && auth.uid == $userId && root.child('users').child(auth.uid).exists()",
+          ".write": "auth != null && auth.uid == $userId && root.child('users').child(auth.uid).exists()"
+        }
+      }
+    },
+    "commits": {
+      ".read": "auth != null && root.child('systemUsers').child(auth.uid).child('role').val() === 'admin'",
+      "$userId": {
+        ".indexOn": ["createdAt"],
+        ".read": "auth != null && auth.uid == $userId && root.child('users').child(auth.uid).exists()",
+        ".write": "auth != null && auth.uid == $userId && root.child('users').child(auth.uid).exists()",
+        "$commitId": {
+          ".read": "auth != null && auth.uid == $userId && root.child('users').child(auth.uid).exists()",
+          ".write": "auth != null && auth.uid == $userId && root.child('users').child(auth.uid).exists()"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+22:44:46.745 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+22:44:47.111 [main] INFO com.firebase.server.forge.App$ - Listening at 0.0.0.0:9000
+22:45:00.457 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO com.firebase.core.namespace.NamespaceActor - fake-server successfully activated FBKV (SurveyIdle(0)) wait: 188ms, init: 0ms
+22:45:00.590 [NamespaceSystem-blocking-namespace-operation-dispatcher-7] INFO com.firebase.core.namespace.StateManager - Namespace fake-server status Active to Active
+22:45:00.664 [NamespaceSystem-blocking-namespace-operation-dispatcher-7] INFO com.firebase.core.namespace.StateManager - Namespace fake-server status Active to Active
+22:45:00.695 [FirebaseWorkerPool-1-2] WARN com.firebase.core.persistence.backend.dummy.EmulatorMetadataPersistence - Multiple projectIds are not recommended in single project mode. Requested 
+namespace hunchy-4a0dc-default-rtdb, but the emulator is configured for fake-server. To 
+opt-out of single project mode add/set the singleProjectMode: false property in 
+the firebase.json emulators config. 
+22:45:00.704 [NamespaceSystem-akka.actor.default-dispatcher-6] INFO com.firebase.core.namespace.NamespaceActor - hunchy-4a0dc-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 3ms, init: 0ms
+22:45:00.771 [NamespaceSystem-blocking-namespace-operation-dispatcher-7] INFO com.firebase.core.namespace.StateManager - Namespace hunchy-4a0dc-default-rtdb status Active to Active
+22:45:28.517 [FirebaseWorkerPool-1-4] WARN com.firebase.core.persistence.backend.dummy.EmulatorMetadataPersistence - Multiple projectIds are not recommended in single project mode. Requested 
+namespace hunchy-4a0dc, but the emulator is configured for fake-server,hunchy-4a0dc-default-rtdb. To 
+opt-out of single project mode add/set the singleProjectMode: false property in 
+the firebase.json emulators config. 
+22:45:28.570 [NamespaceSystem-akka.actor.default-dispatcher-6] INFO com.firebase.core.namespace.NamespaceActor - hunchy-4a0dc successfully activated FBKV (SurveyIdle(0)) wait: 31ms, init: 0ms
+23:30:34.537 [NamespaceSystem-blocking-namespace-operation-dispatcher-95] INFO com.firebase.core.namespace.StateManager - Namespace hunchy-4a0dc-default-rtdb status Active to Active
+01:53:47.578 [Thread-0] INFO com.firebase.server.forge.App$ - Attempting graceful shutdown.
+01:53:47.949 [NamespaceSystem-akka.actor.default-dispatcher-210] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for hunchy-4a0dc
+01:53:47.949 [NamespaceSystem-akka.actor.default-dispatcher-70] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for hunchy-4a0dc-default-rtdb
+01:53:47.949 [NamespaceSystem-akka.actor.default-dispatcher-263] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for fake-server
+01:53:47.972 [NamespaceSystem-akka.actor.default-dispatcher-265] INFO com.firebase.core.namespace.Terminator$Terminator - 3 actors left to terminate: hunchy-4a0dc-default-rtdb, fake-server, hunchy-4a0dc
+01:53:47.985 [Thread-0] INFO com.firebase.server.forge.App$ - Graceful shutdown complete.

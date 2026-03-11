@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+  "releaseDate": "2026-01-19T16:25:30.027Z",
+  "platforms": {
+    "macos-x64": {
+      "url": "https://hunchy-4a0dc.web.app/binaries/hunchy-macos-x64",
+      "checksum": "07c093654ec25768c79aae5ac8ad960401aaf9f4a4c72c48ef65c4f13535bf68"
+    },
+    "macos-arm64": {
+      "url": "https://hunchy-4a0dc.web.app/binaries/hunchy-macos-arm64",
+      "checksum": "45027ab8dda43c08d266237b279711dfbb4c7533b9642502ba672fc5391b5caa"
+    },
+    "linux-x64": {
+      "url": "https://hunchy-4a0dc.web.app/binaries/hunchy-linux-x64",
+      "checksum": "72325c2019c96e06d76984266914b93e9d4056a237148ddeb10501380680fae6"
+    },
+    "linux-arm64": {
+      "url": "https://hunchy-4a0dc.web.app/binaries/hunchy-linux-arm64",
+      "checksum": "5598e41c414175349ca4bbb241d79f959cf975b5d136aee1f00e24023bac6954"
+    },
+    "win-x64": {
+      "url": "https://hunchy-4a0dc.web.app/binaries/hunchy-win-x64.exe",
+      "checksum": "4f85c84972115182f356cc07acfcef7d21f593b79fd4fef65ecd8437ea2bf6ec"
+    }
+  }
+}

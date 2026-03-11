@@ -1,0 +1,69 @@
+{
+  "name": "@hunchy/cli",
+  "version": "0.0.4",
+  "description": "AI-powered commit intelligence CLI tool",
+  "type": "module",
+  "bin": {
+    "hunchy": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "cli",
+    "git",
+    "commit",
+    "ai",
+    "semantic-commits",
+    "developer-tools",
+    "automation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hunchy-hq/hunchy-cli.git"
+  },
+  "homepage": "https://github.com/hunchy-hq/hunchy-cli#readme",
+  "license": "MIT",
+  "author": "Hunchy",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "typecheck": "tsc --noEmit",
+    "bundle:standalone": "esbuild src/index.ts --bundle --platform=node --target=node20 --outfile=dist/runtime-standalone.js --format=esm --conditions=node --main-fields=module,main --loader:.js=jsx --packages=external --external:fsevents",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "commander": "^14.0.2",
+    "firebase": "^11.1.0",
+    "fs-extra": "^11.2.0",
+    "glob": "^11.0.0",
+    "gradient-string": "^2.0.2",
+    "ink": "^5.0.1",
+    "ink-link": "^4.1.0",
+    "ink-select-input": "^6.0.0",
+    "ink-spinner": "^5.0.0",
+    "ink-text-input": "^6.0.0",
+    "node-machine-id": "^1.1.12",
+    "open": "^10.1.0",
+    "ora": "^9.0.0",
+    "react": "^18.3.1",
+    "react-devtools-core": "^7.0.1",
+    "simple-git": "^3.27.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/gradient-string": "^1.1.6",
+    "@types/node": "^22",
+    "@types/react": "^18.3.12",
+    "@vercel/ncc": "^0.38.4",
+    "esbuild": "^0.20.0",
+    "ink-testing-library": "^4.0.0",
+    "typescript": "^5"
+  }
+}

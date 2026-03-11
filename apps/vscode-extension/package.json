@@ -1,0 +1,55 @@
+{
+  "name": "hunchy",
+  "displayName": "Hunchy",
+  "description": "AI-powered commit intelligence for VS Code",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "hunchy.commit",
+        "title": "Generate Commits",
+        "category": "Hunchy"
+      },
+      {
+        "command": "hunchy.openPanel",
+        "title": "Open Hunchy Panel",
+        "category": "Hunchy"
+      }
+    ],
+    "views": {
+      "explorer": [
+        {
+          "id": "hunchyPanel",
+          "name": "Hunchy",
+          "when": "gitOpenRepositoryCount > 0"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

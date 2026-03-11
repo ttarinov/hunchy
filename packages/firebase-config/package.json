@@ -1,0 +1,21 @@
+{
+  "name": "@workspace/firebase-config",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "eslint . --max-warnings 0"
+  },
+  "dependencies": {
+    "firebase": "^11.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "typescript": "^5",
+    "@workspace/eslint-config": "workspace:*",
+    "@workspace/typescript-config": "workspace:*"
+  },
+  "exports": {
+    "./firebase": "./firebase.ts"
+  }
+}

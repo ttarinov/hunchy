@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "hunchy-4a0dc"
+    },
+  "targets": {
+    "hunchy-4a0dc": {
+      "hosting": {
+        "web": [
+          "hunchy-4a0dc"
+        ],
+        "adminish": [
+          "adminish"
+        ]
+      }
+    }
+  }
+}

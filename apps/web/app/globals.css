@@ -1,0 +1,57 @@
+@import "@hunkly/ui/globals.css";
+@import "./web-utilities.css";
+
+:root {
+  --primary: oklch(0.75 0.18 270);
+  --primary-foreground: oklch(0.08 0.01 265);
+  --secondary: oklch(0.72 0.19 195);
+  --secondary-foreground: oklch(0.08 0.01 265);
+  --accent: oklch(0.72 0.19 195);
+  --accent-foreground: oklch(0.08 0.01 265);
+  --ring: oklch(0.75 0.18 270);
+  --chart-1: oklch(0.75 0.18 270);
+  --chart-2: oklch(0.72 0.19 195);
+  --sidebar-primary: oklch(0.75 0.18 270);
+  --sidebar-ring: oklch(0.75 0.18 270);
+}
+
+.dark {
+  --primary: oklch(0.75 0.18 270);
+  --primary-foreground: oklch(0.08 0.01 265);
+  --secondary: oklch(0.72 0.19 195);
+  --secondary-foreground: oklch(0.08 0.01 265);
+  --accent: oklch(0.72 0.19 195);
+  --accent-foreground: oklch(0.08 0.01 265);
+  --ring: oklch(0.75 0.18 270);
+  --chart-1: oklch(0.75 0.18 270);
+  --chart-2: oklch(0.72 0.19 195);
+  --sidebar-primary: oklch(0.75 0.18 270);
+  --sidebar-ring: oklch(0.75 0.18 270);
+}
+
+@layer base {
+  html {
+    overflow-x: hidden;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+}

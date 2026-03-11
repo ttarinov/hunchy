@@ -1,0 +1,43 @@
+{
+  "name": "hunchy-launcher",
+  "version": "1.0.0",
+  "description": "Tiny open-source launcher for Hunchy CLI - verifiable bootstrap that downloads and executes the runtime",
+  "type": "module",
+  "bin": {
+    "hunchy": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "typecheck": "tsc --noEmit",
+    "build:binary": "node scripts/build-binary.js",
+    "test": "node dist/index.js --help"
+  },
+  "keywords": [
+    "hunchy",
+    "cli",
+    "launcher",
+    "bootstrap"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hunchy-hq/hunchy-launcher.git"
+  },
+  "homepage": "https://github.com/hunchy-hq/hunchy-launcher#readme",
+  "license": "MIT",
+  "author": "Hunchy",
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "esbuild": "^0.27.2",
+    "typescript": "^5"
+  }
+}
